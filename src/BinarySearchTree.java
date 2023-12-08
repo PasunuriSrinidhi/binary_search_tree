@@ -48,4 +48,29 @@ public class BinarySearchTree<T extends Comparable<T>> {
     public int size(){
         return this.size;
     }
+    // UC3: method to search node in BST
+    public void search(T data) {
+        boolean found = this.searchHelper(this.root, data);
+        if (found) {
+            System.out.println("Found node " + data);
+        } else {
+            System.out.println("Cannot find node " + data);
+        }
+    }
+
+    // helper function for search method
+    private boolean searchHelper(Node<T> root, T data) {
+        if (root == null) {
+            return false;
+        }
+        int res = data.compareTo(root.data);
+        if (res < 0) {
+            return searchHelper(root.left, data);
+        } else if (res > 0) {
+            return searchHelper(root.right, data);
+        } else {
+            return true;
+        }
+    }
+
 }

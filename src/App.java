@@ -21,7 +21,10 @@ public class App {
 
         System.out.print("\nInorder Traversal: ");
         bst.inorder();
-         // UC2: Displaying size of bst
-        System.out.print("\nSize of BST is: " + bst.size());
+        // UC2: Displaying size of bst
+        System.out.print("\nSize of BST is: " + bst.size() + "\n");
+
+        // Uc3: Searching node 63 in bst
+        bst.search(63);
     }
 }
